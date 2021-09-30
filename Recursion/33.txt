@@ -1,0 +1,19 @@
+-------------------------------- Remove Invalid Parenthesis ---------------------------------------
+
+1. You are given a string, which represents an expression having only opening and closing parenthesis.
+2. You have to remove minimum number of parenthesis to make the given expression valid.
+3. If there are multiple answers, you have to print all of them.
+
+
+Input Format:
+A string containing only opening and closing parenthesis
+
+Constraints:
+1 <= length of string <= 20
+
+Sample Input:
+()())()
+
+Sample Output:
+(())()
+()()()
