@@ -1,53 +1,41 @@
------------------------------------- BST Iterator | O(h) Space ------------------------------
+--------------------------- Inorder Predecessor and Successor in a BST -------------------------
 
-Link : https://leetcode.com/problems/binary-search-tree-iterator/
-Video : https://www.youtube.com/watch?v=D2jMcmxU4bs&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=51
+Link : https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1#
+Video : https://www.youtube.com/watch?v=SXKAD2svfmI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=51
 
 
-Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
+There is BST given with root node with key part as integer only. You need to find the inorder successor 
+and predecessor of a given key. In case, if the either of predecessor or successor is not found print -1.
 
-BSTIterator(TreeNode root) Initializes an object of the BSTIterator class. The root of the BST is given as part of the constructor. The pointer 
-should be initialized to a non-existent number smaller than any element in the BST.
-boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false.
-int next() Moves the pointer to the right, then returns the number at the pointer.
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. 
+Each test case contains n denoting the number of edges of the BST. The next line contains the edges of the BST. 
+The last line contains the key.
 
-Notice that by initializing the pointer to a non-existent smallest number, the first call to next() will return the smallest element in the BST.
-
-You may assume that next() calls will always be valid. That is, there will be at least a next number in the in-order traversal when next() is called.
-
- 
-
-Example 1:
-
-Input
-["BSTIterator", "next", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"]
-[[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []]
-Output
-[null, 3, 7, true, 9, true, 15, true, 20, false]
-
-Explanation
-BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]);
-bSTIterator.next();    // return 3
-bSTIterator.next();    // return 7
-bSTIterator.hasNext(); // return True
-bSTIterator.next();    // return 9
-bSTIterator.hasNext(); // return True
-bSTIterator.next();    // return 15
-bSTIterator.hasNext(); // return True
-bSTIterator.next();    // return 20
-bSTIterator.hasNext(); // return False
-
- 
+Output:
+Print the predecessor followed by successor for the given key. If the predecessor or successor is not found print -1.
 
 Constraints:
+1<=T<=100
+1<=n<=100
+1<=data of node<=100
+1<=key<=100
 
-    The number of nodes in the tree is in the range [1, 10^5].
-    0 <= Node.val <= 10^6
-    At most 10^5 calls will be made to hasNext, and next.
+Example:
+Input:
+2
+6
+50 30 L 30 20 L 30 40 R 50 70 R 70 60 L 70 80 R
+65
+6
+50 30 L 30 20 L 30 40 R 50 70 R 70 60 L 70 80 R
+100
 
+Output:
+60 70
+80 -1
  
 
-Follow up:
 
-    Could you implement next() and hasNext() to run in average O(1) time and use O(h) memory, where h is the height of the tree?
-
+Company Tags:
+Ola Cabs
