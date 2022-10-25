@@ -1,0 +1,19 @@
+// adj is like : {{node1, node2, weight}, {node, node, wt}.....}
+
+class Solution{
+	public:
+    vector <int> bellman_ford(int V, vector<vector<int>> adj, int S) {
+       vector<int>dist(V, 1e8);
+       dist[S] = 0;
+       
+       for(int i = 0; i < V-1; i++){
+           for(auto it : adj){
+               if(dist[it[0]] + it[2] < dist[it[1]]){
+                   dist[it[1]] = dist[it[0]] + it[2];
+               }
+           }
+       }
+       
+       return dist;
+   }
+};
